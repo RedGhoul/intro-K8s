@@ -14,6 +14,7 @@ before_install:
     - gcloud config set project multi-k8s-281711
     - gcloud config set compute/zone us-central1-c
     - gcloud container clusters get-credentials cluster-1
+    - echo $DOCKER_USER
     - docker login -u "$DOCKER_USER" -p "$DOCKER_PASSWORD"
     - docker build -t avaneesa/react-test -f ./client/Dockerfile.dev ./client
     
